@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raji portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+
+    .nav {
+      width: 100%;
+      position: absolute;
+      margin-bottom: 3em;
+      user-select: none;
+      height: 3em;
+    
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .education {
+      padding: 15px 0 0 0;
+    }
+
+    .nav .name,
+    .edu-name {
+      font-size: 2em;
+      font-weight: 500;
+      font-family: italic;
+    }
+
+    .nav .navbar ul {
+      list-style-type: none;
+      height: 3em;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav .navbar ul li {
+      align-content: center;
+      padding: 0 10px;
+      font-size: 1.5em;
+      transition: all 0.5s ease;
+    }
+
+    .nav .navbar ul li:hover {
+      border: 1px solid rgb(3, 3, 3);
+      color: black;
+      border-radius: 5px;
+      background-color: darkred;
+    }
+
+    .mobile-nav i {
+      font-size: 2em;
+      padding: 3px;
+      border: 1px solid transparent;
+    }
+
+    .mobile-nav i:active {
+      border-color: darkred;
+    }
+
+    #Education,
+    #projects,
+    #certifications,
+    #skills {
+      scroll-margin-top: 30px;
+    }
+
+    .mobile-navbar .mobilenav {
+      user-select: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      background-color: whitesmoke;
+
+      ul {
+        position: inherit;
+
+        justify-content: center;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        li {
+          margin: 5px 0;
+          font-size: 2em;
+          text-align: center;
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          color: black;
+        }
+
+        li a {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+
+    .fa-close {
+      position: fixed;
+      margin: 10px;
+      right: 0;
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 480px) {
+      .navbar {
+        display: none;
+      }
+
+      .mobilenav.active {
+        display: block;
+        /* overflow: hidden; */
+      }
+
+      .intro {
+        padding-top: 3em;
+        height: calc(100vh - 3em);
+        flex-direction: column;
+        background-color: whitesmoke;
+        /* justify-content:center; */
+        align-items: center;
+      }
+
+      .intro .intro-image {
+        margin: 10px 0 10px 0;
+      }
+
+      .image {
+        border: 2px solid darkred;
+        width: 300px;
+        background-color: whitesmoke;
+      }
+
+      .intro-text p {
+        margin: 10px;
+        font-size: 20px;
+        color: black;
+      }
+
+      .intro-text p span {
+        font-size: 30px;
+        color: darkred;
+      }
+
+      #career-text {
+        font-size: 30px;
+      }
+
+      .intro-btns {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .intro-btns button {
+        border: none;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: whitesmoke;
+        color: white;
+        box-shadow: whitesmoke,
+          -5px -5px 5px whitesmoke;
+        font-size: 30px;
+      }
+
+      .education {
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .education-section {
+        width: 100%;
+
+        border: 2px solid darkred;
+        box-shadow: 5px 5px 5px whitesmoke;
+      }
+
+      .education-section span {
+        display: block;
+        font-size: 20px;
+      }
+
+      .education-section .role {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .qualification {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .project {
+        margin: 10px;
+
+        .project-img {
+          height: 300px;
+          width: 300px;
+          display: block;
+          border: 2px solid whitesmoke;
+        }
+
+        .project-name {
+          font-size: 20px;
+          text-align: center;
+          display: block;
+        }
+      }
+
+      #projects {
+        padding: 10px 00 0 0;
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .projects-title,
+      .skills-title,
+      .certification-title,
+      .education-title {
+        padding-top: 20px;
+        display: block;
+        background-color: darkred;
+        font-size: 2em;
+        font-weight: 500;
+        font-family: Montserrat;
+      }
+
+      #skills {
+        width: 100%;
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .skills {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+      }
+
+      .skill {
+        padding: 10px;
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      .skill i {
+        font-size: 80px;
+        text-align: center;
+        display: block;
+      }
+
+      .skill .skill-name {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      #certifications {
+        padding: 10px 0 0 0;
+        background-color: whitesmoke;
+        color: black;
+        width: 100%;
+      }
+
+      .certifications {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .certificate {
+        margin: 10px 0;
+        border: 1px solid white;
+        padding: 10px;
+      }
+
+      .certificate a {
+        display: flex;
+        justify-content: center;
+      }
+
+      .certificate a img {
+        display: block;
+        height: 150px;
+      }
+    }
+
+    /* Tablets */
+    @media screen and (max-width: 768px) and (min-width: 481px) {
+      .navbar {
+        display: none;
+      }
+
+      .mobilenav.active {
+        display: block;
+      }
+
+      .intro {
+        padding: 3em;
+        flex-direction: column;
+        height: calc(100vh + 3em);
+        align-content: space-around;
+        align-items: center;
+        background-color: whitesmoke;
+      }
+
+      .intro .intro-image {
+        margin: 10px 0 10px 0;
+      }
+
+      .image {
+        border: 2px solid darkred;
+        width: 400px;
+      }
+
+      .intro-text p {
+        margin: 10px;
+        font-size: 30px;
+        color: black;
+      }
+
+      .intro-text p span {
+        font-size: 40px;
+        color: darkred;
+      }
+
+      #career-text {
+        font-size: 30px;
+      }
+
+      .intro-btns {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .intro-btns button {
+        border: 2px solid darkred;
+        border: none;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: whitesmoke;
+        color: black;
+        box-shadow: 5px 5px 5px whitesmoke,
+          -5px -5px 5px whitesmoke;
+        font-size: 30px;
+      }
+
+      .education {
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .education-section {
+        width: 100%;
+
+        border: 2px solid whitesmoke;
+        box-shadow: 5px 5px 5px whitesmoke;
+      }
+
+      .education-section span {
+        display: block;
+        font-size: 25px;
+      }
+
+      .education-section .role {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .qualification {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .project {
+        margin: 10px;
+
+        .project-img {
+          height: 300px;
+          width: 300px;
+          display: block;
+          border: 2px solid whitesmoke;
+        }
+
+        .project-name {
+          font-size: 25px;
+          text-align: center;
+          display: block;
+        }
+      }
+
+      #projects {
+        padding: 10px 00 0 0;
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .projects-title,
+      .skills-title,
+      .certification-title,
+      .education-title {
+        padding-top: 20px;
+        padding-left: 10px;
+        display: block;
+        background-color: darkred;
+        font-size: 2em;
+        font-weight: 500;
+        font-family: Montserrat;
+        color: black;
+      }
+
+      #skills {
+        width: 100%;
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 10px;
+      }
+
+      .skill {
+        padding: 10px;
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      .skill i {
+        font-size: 80px;
+        text-align: center;
+        display: block;
+      }
+
+      .skill .skill-name {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      #certifications {
+        padding: 10px 0 0 0;
+        background-color: whitesmoke;
+        color: black;
+        width: 100%;
+      }
+
+      .certifications {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .certificate {
+        margin: 10px 0;
+        border: 1px solid white;
+        padding: 10px;
+      }
+
+      .certificate a {
+        display: flex;
+        justify-content: center;
+      }
+
+      .certificate-name {
+        text-align: center;
+        display: block;
+      }
+
+      .certificate a img {
+        display: block;
+        height: 150px;
+      }
+    }
+
+    /* Large */
+    @media screen and (min-width: 769px)
+    /*large*/
+      {
+      .mobile-nav {
+        display: none;
+      }
+
+      .image {
+        width: 400px;
+        border: 3px solid darkred;
+      }
+
+      .intro {
+        height: calc(100vh + 3em);
+        background-color: whitesmoke;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+        color: black;
+      }
+
+      .intro-text {
+        font-size: 40px;
+      }
+
+      .intro-text p span {
+        font-size: 50px;
+        color: black;
+      }
+
+      .intro-btns {
+        margin: 30px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .intro-btns button {
+        padding: 10px;
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: whitesmoke;
+        color: black;
+        cursor: pointer;
+        box-shadow: 5px 5px 5px darkred,
+          -5px -5px 5px darkred;
+      }
+
+      .education {
+        padding: 20px 0;
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .education-section {
+        width: 30vw;
+        margin: 10px;
+        border: 2px solid whitesmoke;
+        box-shadow: 5px 5px 5px whitesmoke;
+      }
+
+      .education-section span {
+        display: block;
+        font-size: 25px;
+      }
+
+      .education-section .role {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .qualification {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+      #skills {
+        width: 100%;
+        background-color: whitesmoke;
+        color: black;
+      }
+
+      .skills {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: row;
+
+        gap: 10px;
+      }
+
+      .skill {
+        padding: 10px;
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      .skill i {
+        font-size: 80px;
+        text-align: center;
+        display: block;
+      }
+
+      .skill .skill-name {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      #certifications {
+        padding: 10px 0 0 0;
+        background-color: whitesmoke;
+        color: black;
+        width: 100%;
+      }
+
+      .certifications {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .certificate {
+        margin: 10px 0;
+        border: 1px solid white;
+        padding: 10px;
+      }
+
+      .certificate a {
+        display: flex;
+        justify-content: center;
+      }
+
+      .certificate a img {
+        display: block;
+        height: 150px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:active,
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: black;
+    }
+
+    .intro {
+      display: flex;
+    }
+
+    .image {
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
+
+    .contact {
+      font-size: 20px;
+    }
+    #projects {
+  background-color: whitesmoke;
+  color: black;
+  padding: 20px;
+}
+
+.projects-title {
+  font-size: 2em;
+  font-weight: 500;
+  font-family: Montserrat;
+  text-align: center;
+  background-color: darkred;
+  margin-bottom: 20px;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project {
+  background-color: white;
+  border: 2px solid darkred;
+  box-shadow: 5px 5px 5px darkred;
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+}
+
+.project-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.project-description {
+  font-size: 1em;
+  color: gray;
+  margin-top: 10px;
+}
+
+.project-link {
+  display: block;
+  margin-top: 10px;
+  color: darkred;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+    #contact {
+    background-color: darkred;
+    color: white;
+    padding: 50px 30px;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid darkred;
+  }
+  
+  .contact-form button {
+    background-color: darkred;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: darkred;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+
+
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="name"><img style="height: 100px;" src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/d/8/b/d8bd07eba2fb8156a43041fb1496bb2721da9e49.png" alt=""></div>
+    <div class="mobile-nav">
+      <i class="fa fa-bars" id="navBtn"></i>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#connect">Contact Me</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mobile-navbar">
+    <div class="mobilenav">
+        <ul>
+            <li><i class="fa fa-close"></i></li>
+            <br /><br /><br /><br />
+            <li><a href="#Home" class="nav-link">Home</a></li>
+            <li><a href="#Education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#connect" class="nav-link">Contact Me</a></li>
+        </ul>
+    </div>
+</div>
+  <div class="intro" id="Home">
+    <div class="intro-image">
+      <img src="https://ik.imagekit.io/fu4uxhoyq/Portfolio%20imgg.jpg?updatedAt=1740668802742" loading="lazy" class="image"
+        alt="Raji's profile picture" />
+    </div>
+    <div class="intro-text">
+      <p>
+        Myself <span style="color: darkred;">R</span>aja <span  style="color: darkred;">R</span>ajeswari <span  style="color: darkred;">J</span>avvadi
+      </p>
+      <p id="career-text">I am a</p>
+      <div class="intro-btns">
+        <button><a href="#skills">My Skills</a></button>
+        <button><a href="https://ik.imagekit.io/fu4uxhoyq/WEB%20DEVELOPER.pdf?updatedAt=1740669345758" download="https://ik.imagekit.io/fu4uxhoyq/WEB%20DEVELOPER.pdf?updatedAt=1740669345758">View Resume</a></button>
+        
+      </div>
+    </div>
+  </div>
+  <div class="education" id="Education">
+    <div class="education-title" style="font-size: 30px; background-color: darkred; text-align: center;">Education</div>
+
+    <div class="qualification">
+      <div class="graduation education-section">
+        <span class="role"><i class="fa-solid fa-user-graduate"></i> Graduation
+        </span>
+        <span class="branch"><b>Branch</b> : CSE-Data Science</span>
+        <span class="year"><b>Year</b> : 2022 - 2026</span>
+
+        <span class="name"><b>College</b> : Sasi Institute of Technology and Engineering</span>
+        <span class="location"><b>Location </b> :
+          <i class="fa-solid fa-location-dot"></i> Tadepalligudem</span>
+        <span class="percentage"><b>CGPA</b> : 8.84</span>
+      </div>
+      <div class="Intermediate education-section">
+        <span class="role"><i class="fa-solid fa-graduation-cap"></i> Intermediate
+        </span>
+        <span class="branch"><b>Branch</b> : MPC</span>
+        <span class="year"><b>Year</b> : 2020 - 2022</span>
+
+        <span class="name"><b>College</b> : S.V.S.S Arts & Science Jr College</span>
+        <span class="location"><b>Location </b> :
+          <i class="fa-solid fa-location-dot"></i> Attili</span>
+        <span class="percentage"><b>Passing Percenatge</b> : 78%</span>
+      </div>
+      <div class="schooling education-section">
+        <span class="role"><i class="fa-solid fa-graduation-cap"></i> Schooling(S.S.E)
+        </span>
+        <span class="year"><b>Year</b> : 2019 - 2020</span>
+
+        <span class="name"><b>College</b> : Z.P. Girls High School</span>
+        <span class="location"><b>Location </b> :
+          <i class="fa-solid fa-location-dot"></i> Attili</span>
+        <span class="percentage"><b>Passing Percenatge</b> : 98%</span>
+      </div>
+    </div>
+  </div>
+  <div id="skills">
+    <div class="skills-title" style="font-size: 30px; background-color: darkred; text-align: center;">Skills</div>
+
+    <div class="skills">
+      <div class="skill">
+        <i class="fab fa-html5"></i>
+
+        <span class="skill-name">HTML5</span>
+      </div>
+      <div class="skill">
+        <i class="fab fa-css3-alt"></i>
+
+        <span class="skill-name">CSS</span>
+      </div>
+      <div class="skill">
+        <i class="fab fa-js"></i>
+
+        <span class="skill-name">JS</span>
+      </div>
+      <div class="skill">
+        <i class="fas fa-code"></i>
+
+        <span class="skill-name">C</span>
+      </div>
+      <div class="skill">
+        <i class="fab fa-java"></i>
+
+        <span class="skill-name">Java</span>
+      </div>
+      <div class="skill">
+        <i class="fab fa-python"></i>
+
+        <span class="skill-name">Python</span>
+      </div>
+    </div>
+  </div>
+  <div id="certifications">
+    <div class="certification-title" style="font-size: 30px; background-color: darkred; text-align: center;">Certifications</div>
+    <div class="certifications">
+      <div class="certificate">
+        <a href="https://ik.imagekit.io/fu4uxhoyq/Google%20Android%20Virtual%20Internship.jpg?updatedAt=1728211163861"
+          target="_blank">
+          <img src="https://ik.imagekit.io/fu4uxhoyq/Neutral%20Simple%20Minimalist%20Modern%20Gift%20Certificate%20Voucher%20(1).png?updatedAt=1740154154182"
+            alt="Certification 3" />
+        </a>
+        <span class="certificate-name">Android Developer Certificate from AICTE</span>
+      </div>
+      <div class="certificate">
+        <a href="https://ik.imagekit.io/fu4uxhoyq/AIML%20Virtual%20Internship.jpg?updatedAt=1728211150762"
+          target="_blank">
+          <img src="https://ik.imagekit.io/fu4uxhoyq/Neutral%20Simple%20Minimalist%20Modern%20Gift%20Certificate%20Voucher%20(2).png?updatedAt=1740154154294"
+            alt="Certification 2" />
+        </a>
+        <span class="certificate-name">AI-ML engineer certificate from AICTE</span>
+      </div>
+      <div class="certificate">
+        <a href="https://ik.imagekit.io/fu4uxhoyq/IMG_20241005_210020.jpg?updatedAt=1728142708548" target="_blank">
+          <img
+            src="https://ik.imagekit.io/fu4uxhoyq/Neutral%20Simple%20Minimalist%20Modern%20Gift%20Certificate%20Voucher%20(3).png?updatedAt=1740154154451"  alt="Certification 1" />
+        </a>
+        <span class="certificate-name">Mongodb developer certificate from Infosys Springboard</span>
+      </div>
+      <div class="certificate">
+        <a href="https://ik.imagekit.io/fu4uxhoyq/IBM%20Certificatification_page-0001.jpg?updatedAt=1738639598415" target="_blank">
+          <img
+            src="https://ik.imagekit.io/fu4uxhoyq/Neutral%20Simple%20Minimalist%20Modern%20Gift%20Certificate%20Voucher%20(4).png?updatedAt=1740154154400"  alt="Certification 1" />
+        </a>
+        <span class="certificate-name">Python for Data Science Certificate from IBM</span>
+      </div>
+      <div class="certificate">
+        <a href="https://ik.imagekit.io/fu4uxhoyq/Deloitte%20Virtual%20internship%20certificate_page-0001.jpg?updatedAt=1740666300882" target="_blank">
+          <img
+            src="https://ik.imagekit.io/fu4uxhoyq/Neutral%20Simple%20Minimalist%20Modern%20Gift%20Certificate%20Voucher%20(5).png?updatedAt=1740666858023"  alt="Certification 1" />
+        </a>
+        <span class="certificate-name">Data Analytics Job Simulation Certificate from Deloitte</span>
+      </div>
+    </div>
+  </div>
+  <!-- Projects Section -->
+<div class="projects" id="projects">
+  <div class="projects-title">Projects</div>
+
+  <div class="projects-container">
+    <!-- Project 1 -->
+    <div class="project">
+      <div class="project-img"><a href="https://ik.imagekit.io/fu4uxhoyq/Bootstrap/btsshp.html?updatedAt=1736261079473">
+        <img src="https://ik.imagekit.io/fu4uxhoyq/vibemart.jpg?updatedAt=1736259269047" alt="Project 1">
+      </a> </div>
+      <div class="project-name">VIBECART</div>
+      <p class="project-description">
+        An e-commerce website that allows users to browse and purchase products. 
+        Implemented with HTML, CSS, and Bootstrap for the frontend.
+      </p><br>
+      <b><a href="https://ik.imagekit.io/fu4uxhoyq/Bootstrap/btsshp.html?updatedAt=1736261079473" class="project-link" target="_blank">Live Demo</a></b>
+      <a href="https://github.com/RajiRjavvadi/Ecommerce-website" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project">
+      <div class="project-img"><a href="https://ik.imagekit.io/fu4uxhoyq/Bootstrap/restrnt.html?updatedAt=1736261542206">
+        <img src="https://ik.imagekit.io/fu4uxhoyq/restaurant%20img.jpg?updatedAt=1736259622968" alt="Project 2">
+      </a></div>
+      <div class="project-name">Restaurant</div>
+      <p class="project-description">
+        A website that allows users to book tables at a restaurant. Built using HTML and CSS with a focus on responsive design.
+      </p><br><br>
+      <b><a href="https://ik.imagekit.io/fu4uxhoyq/Bootstrap/restrnt.html?updatedAt=1736261542206"class="project-link" target="_blank">Live Demo</a></b>
+      <a href="https://github.com/RajiRjavvadi/Restaurant-website" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+      <div class="project-img">
+        <img src="https://ik.imagekit.io/fu4uxhoyq/prt.png?updatedAt=1736259995560" alt="Project 3">
+      </div>
+      <div class="project-name">My Portfolio</div>
+      <p class="project-description">
+        A personal website displaying my web development projects, including an e-commerce site, restaurant booking platform, and to-do list app, built with HTML, CSS, and JavaScript.
+      </p><br>
+      <b><a href=""class="project-link" target="_blank">Live Demo</a></b>
+   
+      <a href="https://github.com/RajiRjavvadi/Portfolio" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form action="https://ik.imagekit.io/fu4uxhoyq/Form.html?updatedAt=1740667757642" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn"><a href = "https://ik.imagekit.io/fu4uxhoyq/Form.html?updatedAt=1740667757642">Send Message </a></button>
+  </form>
+</section>
+
+<!-- Footer -->
+
+<div class="contact" id="connect">
+  <p style="text-align: center;">
+    <b>Connect with me at</b>
+    <a href="https://www.linkedin.com/in/rajeswari-javvadi-130520280/" style="color: rgb(59, 59, 156);">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://www.instagram.com/raji_javvadi3" style="color: rgba(89, 18, 107, 0.545);">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://github.com/Raja-Rajeswari-Javvadi" style="color: black;">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="tel:+919912577123" style="color: rgb(1, 69, 254);">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="mailto:rajeswari.javvadi@sasi.ac.in" style="color: rgb(13, 189, 22);">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/919912577123" style="color: #25D366;">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </p>
+</div>
+
+</body>
+<script>
+  // Navbar Toggle
+  let navMenuBtn = document.querySelector(".fa-bars");
+  let navCloseBtn = document.querySelector(".fa-close");
+  let mobileNav = document.querySelector(".mobilenav");
+
+  function toggleMenu() {
+      mobileNav.classList.toggle("active");
+  }
+
+  navMenuBtn.addEventListener("click", toggleMenu);
+  navCloseBtn.addEventListener("click", toggleMenu);
+
+  // Close mobile menu when a link is clicked
+  const mobileNavLinks = document.querySelectorAll(".mobilenav ul li a");
+  mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+          mobileNav.classList.remove("active");
+      });
+  });
+
+  // Close menu when clicking outside of it
+  document.addEventListener("click", function (event) {
+      if (!mobileNav.contains(event.target) && !navMenuBtn.contains(event.target)) {
+          mobileNav.classList.remove("active");
+      }
+  });
+
+  // Dynamic Career Text Animation
+  let careers = ["Web Developer.", "Web Designer.", "Python Developer."];
+  let careerIndex = 0;
+  let index = 0;
+  let careerText = document.getElementById("career-text");
+
+  function displayCareer() {
+      if (careerText) {
+          careerText.innerText = `I am a ${careers[careerIndex].slice(0, index)}`;
+      }
+
+      if (index < careers[careerIndex].length) {
+          index++;
+      } else {
+          setTimeout(() => {
+              careerIndex = (careerIndex + 1) % careers.length;
+              index = 0;
+          }, 1000);
+      }
+  }
+
+  setInterval(displayCareer, 200);
+
+  // Highlight Active Navbar Link on Scroll
+  document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll(".mobilenav ul li a");
+
+      function setActiveLink() {
+          let scrollPosition = window.scrollY;
+          links.forEach(link => {
+              const section = document.querySelector(link.getAttribute("href"));
+              if (section && section.offsetTop <= scrollPosition &&
+                  section.offsetTop + section.offsetHeight > scrollPosition) {
+                  links.forEach(l => l.classList.remove("active"));
+                  link.classList.add("active");
+              }
+          });
+      }
+
+      window.addEventListener("scroll", setActiveLink);
+  });
+</script>
+
+
+</html>
